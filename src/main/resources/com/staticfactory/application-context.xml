@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <beans>
+        <bean id="appointment" class="com.staticfactory.method.beans.Appointment">
+            <property name="appointmentNo" value="10"/>
+            <property name="name" value="Apoorva Raj"/>
+            <property name="location" value="Hyderabad" />
+            <property name="appointmentDate" ref="createdDate" />
+            <property name="status" value="pending" />
+        </bean>
+
+        <bean id="createdDate" class="java.util.Calendar" factory-method="getInstance" />
+
+
+
+    </beans>
+</beans>
